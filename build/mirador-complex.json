@@ -1,0 +1,27 @@
+	{
+	"manifests": [
+    {"manifestUri": "https://data.getty.edu/museum/api/iiif/865/manifest.json",
+    "location": "The J. Paul Getty Museum"}, 
+    {"manifestUri": "https://data.getty.edu/museum/api/iiif/248/manifest.json",
+    "location": "The J. Paul Getty Museum"},
+    {"manifestUri": "https://media.nga.gov/public/manifests/nga_highlights.json",
+    "location": "National Gallery of Art"},
+    {"manifestUri": "https://iiif.harvardartmuseums.org/manifests/object/299964",
+    "location": "Harvard Art Museums"},
+    {"manifestUri": "https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest",
+    "location": "The Frick Collection"},
+    {"manifestUri": "https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json",
+    "location": "The National Gallery"}		
+		],
+	"windows": {
+		"layout": "2x3",
+		"slots": [
+		{ "loadedManifest": "https://media.nga.gov/public/manifests/nga_highlights.json", "slotAddress":"row1.column1", "viewType": "ImageView", "canvasID":"https://media.nga.gov/public/manifests/canvas/52178.json"},
+		{ "loadedManifest": "https://iiif.harvardartmuseums.org/manifests/object/299843", "slotAddress":"row1.column2", "viewType": "ImageView"}
+		]}
+	}
+
+
+
+
+	
