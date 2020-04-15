@@ -12,8 +12,15 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://unpkg.com/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="https://tanc-ahrc.github.io/mirador/mirador/css/mirador-combined.css" rel="stylesheet" type="text/css">
     <style>
     
+#viewer {       
+      display: block;
+      width: 100%;
+      height: 600px;
+      position: relative;
+     }
     </style>
   </head>
 
@@ -28,7 +35,7 @@
 				style="" alt="The National Gallery"/>
 		  </a>
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault"><ul class="navbar-nav">
-<li class="nav-item active"><a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a></li><li class="nav-item "><a class="nav-link" href="IIIF - Standard Example.html">IIIF - Standard Example</a></li><li class="nav-item "><a class="nav-link" href="IIIF - Simple Example.html">IIIF - Simple Example</a></li><li class="nav-item "><a class="nav-link" href="IIIF - Simple Text Example.html">IIIF - Simple Text Example</a></li><li class="nav-item "><a class="nav-link" href="IIIF - Complex Example.html">IIIF - Complex Example</a></li></ul></div>
+<li class="nav-item "><a class="nav-link" href="index.html">Home</a></li><li class="nav-item "><a class="nav-link" href="IIIF - Standard Example.html">IIIF - Standard Example</a></li><li class="nav-item "><a class="nav-link" href="IIIF - Simple Example.html">IIIF - Simple Example</a></li><li class="nav-item active"><a class="nav-link" href="IIIF - Simple Text Example.html">IIIF - Simple Text Example<span class="sr-only">(current)</span></a></li><li class="nav-item "><a class="nav-link" href="IIIF - Complex Example.html">IIIF - Complex Example</a></li></ul></div>
 			
     <span class="navbar-text">
       			<a href="https://github.com/jpadfield/simple-mirador/">
@@ -40,14 +47,24 @@
 			<div class="row ">				
 			 <div class="col-12 col-md-12">          
 				
-				<div class="jumbotron"><h2>National Gallery - <b>Simple Mirador</b> Example</h2></div><div class="row"><div class="col-12 col-lg-12"></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12"><p>This is project is a simple copy of the <a href='https://github.com/jpadfield/simple-site'>simple-site</a> repository. It has ben set up to provide a dedicated example of using the system to view <a href='https://iiif.io'>IIIF</a> manifests within the IIIF Image viewer <a href='https://projectmirador.org/'>Mirador</a>.</p>
+				<div class="jumbotron"><h2><b>Simple Mirador</b> - The Text Example</h2></div><div class="row"><div class="col-12 col-lg-12"></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12"><p>This extension uses the <a href='https://iiif.io'>IIIF</a> image viewer <a href='https://projectmirador.org/'>Mirador</a> to produce a customised presentation of a bespoke selection of IIIF manifests<sup><a id="ref1" href="#section1">[1]</a></sup>. It is an example of a special page that can be added presented using the <a href='https://github.com/jpadfield/simple-site'>simple-site</a> project.</p>
 
-<div class="alert alert-info" role="alert"><h4 class="alert-heading">Instructions</h4><p>Full details and instructions relating to how this system works can be found in the <a href='https://jpadfield.github.io/simple-site/'>simple-site</a> project webpages.</p></div>
+<p><b>For more information about the simple-site project and details about how this example work please see the <a href='https://jpadfield.github.io/simple-site/'>simple-site webpages</a>.</b></p>
 
-<h3>Acknowledgement</h3>
-<p>This specific project was prepared and tested as part of:</p>
-<h4>The AHRC Funded <a href='https://tanc-ahrc.github.io/IIIF-TNC'>IIIF - TANC</a> project</h4>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/jpadfield/simple-site/blob/master/docs/graphics/TANC - IIIF.png"><img height="64px" src="https://github.com/jpadfield/simple-site/raw/master/docs/graphics/TANC - IIIF.png" alt="IIIF - TNC" style="max-width:100%;"></a></p><div class="foonote"><ul></ul></div></div><!--/span--></div><!--/row-->    <br/>
+<div class="alert alert-info" role="alert"><h4 class="alert-heading">Summary</h4><p>This very simple example page has been created using only a simple text list of IIIF manifests, for more information see <a href='https://jpadfield.github.io/simple-site/IIIF%20viewer.html'>here</a>.</p></div>
+
+<h3>The Viewer</h3>
+<div id="viewer"></div>
+<br/><br/>
+<h3>The Mirador Text File</h3>
+
+<figure>
+		<pre style="overflow: hidden;border: 2px solid black;padding: 10px;">
+<code>https://manifests.britishart.yale.edu/manifest/34
+https://iiif.harvardartmuseums.org/manifests/object/299843
+https://media.nga.gov/public/manifests/nga_highlights.json
+</code></pre><figcaption class=\"figure-caption\">The simple text list of manifests presented in this example.</figcaption>
+</figure><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <br/>
 			</div><!--/span-->
 			
 			
@@ -68,8 +85,21 @@
 	<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
 	<script src="https://unpkg.com/tether@1.4.7/dist/js/tether.min.js"></script>
 	<script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+	<script src="https://tanc-ahrc.github.io/mirador/mirador/mirador.min.js"></script>
     <script>
 			
+	$(function() {
+       myMiradorInstance = Mirador({
+         id: "viewer",
+         layout: ,
+         buildPath: "https://tanc-ahrc.github.io/mirador/mirador/",
+         data: [],
+         "windowObjects": [],
+         annotationEndpoint: {
+           name:"Local Storage",
+           module: "LocalStorageEndpoint" }
+       });
+     });
 			function onLoad() {
 				$(function() {
   // ------------------------------------------------------- //
