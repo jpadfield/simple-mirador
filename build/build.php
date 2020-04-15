@@ -642,8 +642,8 @@ function buildExtensionContent ($name, $d, $pd)
 				   $lo = '"1x1"';}
 				 else
 					{$mans = '{}';
-					 $wo = "";
-					 $lo = "";}
+					 $wo = "''";
+					 $lo = "''";}
 				}
 			else {
 				$mans = json_encode($dets["manifests"]);			 
