@@ -624,12 +624,13 @@ function buildExtensionContent ($name, $d, $pd)
 	if ($d["class"] == "mirador")
 		{
 		$mans = '[]';
-		$wo = '[]';
+		$wo = '[{"annotationLayer" : false, "bottomPanelVisible" : false}]';
+		$lo = '""';
 		
 		if (file_exists($d["file"]))
 			{
 			$dets = getRemoteJsonDetails($d["file"], false, true);
-
+			
 			if (!$dets)
 				{
 				$dets = getRemoteJsonDetails($d["file"], false, false);
@@ -638,22 +639,23 @@ function buildExtensionContent ($name, $d, $pd)
 				if (preg_match('/^http.+/', $dets[0]))
 					{$mans = listToManifest ($dets);
 					 $use = $dets[0];
-				   $wo = '[{ "loadedManifest":"'.$use.'", "slotAddress":"row1", "viewType": "ImageView"}]';
+				   $wo = '[{ "loadedManifest":"'.$use.'", "slotAddress":"row1", "viewType": "ImageView", "annotationLayer" : false, "bottomPanelVisible" : false}]';
 				   $lo = '"1x1"';}
-				 else
-					{$mans = '{}';
-					 $wo = "''";
-					 $lo = "''";}
 				}
 			else {
 				$mans = json_encode($dets["manifests"]);			 
 			 
 				if (isset($dets["windows"]))
-				 {$wo = json_encode($dets["windows"]["slots"]);
+				 {
+					foreach ($dets["windows"]["slots"] as $k => $a)
+						{$dets["windows"]["slots"][$k]["bottomPanelVisible"] = false;
+						 $dets["windows"]["slots"][$k]["annotationLayer"] = false;}
+						
+					$wo = json_encode($dets["windows"]["slots"]);
 				  $lo = json_encode($dets["windows"]["layout"]);}
 				else
 				 {$use = $dets["manifests"][0]["manifestUri"];
-				  $wo = '[{ "loadedManifest":"'.$use.'", "slotAddress":"row1", "viewType": "ImageView"}]';
+				  $wo = '[{ "loadedManifest":"'.$use.'", "slotAddress":"row1", "viewType": "ImageView", "annotationLayer" : false, "bottomPanelVisible" : false}]';
 				  $lo = '"1x1"';
 				 }
 			 }
@@ -673,10 +675,7 @@ function buildExtensionContent ($name, $d, $pd)
          layout: '.$lo.',
          buildPath: "https://tanc-ahrc.github.io/mirador/mirador/",
          data: '.$mans.',
-         "windowObjects": '.$wo.',
-         annotationEndpoint: {
-           name:"Local Storage",
-           module: "LocalStorageEndpoint" }
+         "windowObjects": '.$wo.'
        });
      });';
 			//use to hide the label used for the first line which is just in place to provide a margin/padding on the left.
