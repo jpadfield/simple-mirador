@@ -135,6 +135,7 @@ function parseLinks ($text, $sno=1)
 	$use = array_slice($footnotes, ($sno-1), ($fcount-1));
 	
 	$text = $text . "<div class=\"foonote\"><ul>";
+	if ($use) {$text = $text . "<hr/>";}
 	foreach ($use as $j => $str)
 		{$k = $j + $sno;
 		 $str = preg_replace_callback('/http[^\s]+/', 'addLinks', $str);
@@ -599,6 +600,22 @@ function positionExtraContent ($str, $extra)
 	return ($str);	
 	}
 
+
+function listToManifest ($list)
+	{
+	$manifests = array();
+
+	foreach ($list as $k => $url)
+		{
+		$manifests[] = array(
+			"manifestUri" => $url,
+			"location" => "");
+		}
+
+	$manifests = json_encode($manifests);
+	
+	return($manifests);
+	}
 	
 function buildExtensionContent ($name, $d, $pd)
 	{
@@ -610,17 +627,37 @@ function buildExtensionContent ($name, $d, $pd)
 		$wo = '[]';
 		
 		if (file_exists($d["file"]))
-			{$dets = getRemoteJsonDetails($d["file"], false, true);
-			 $mans = json_encode($dets["manifests"]);			 
+			{
+			$dets = getRemoteJsonDetails($d["file"], false, true);
+
+			if (!$dets)
+				{
+				$dets = getRemoteJsonDetails($d["file"], false, false);
+				$dets = explode(PHP_EOL, trim($dets));
+
+				if (preg_match('/^http.+/', $dets[0]))
+					{$mans = listToManifest ($dets);
+					 $use = $dets[0];
+				   $wo = '[{ "loadedManifest":"'.$use.'", "slotAddress":"row1", "viewType": "ImageView"}]';
+				   $lo = '"1x1"';}
+				 else
+					{$mans = '{}';
+					 $wo = "";
+					 $lo = "";}
+				}
+			else {
+				$mans = json_encode($dets["manifests"]);			 
 			 
-			 if (isset($dets["windows"]))
-				{$wo = json_encode($dets["windows"]["slots"]);
-				 $lo = json_encode($dets["windows"]["layout"]);}
-			 else
-			  {$use = $dets["manifests"][0]["manifestUri"];
-				 $wo = '[{ "loadedManifest":"'.$use.'", "slotAddress":"row1", "viewType": "ImageView"}]';
-				 $lo = '"1x1"';
-				}}
+				if (isset($dets["windows"]))
+				 {$wo = json_encode($dets["windows"]["slots"]);
+				  $lo = json_encode($dets["windows"]["layout"]);}
+				else
+				 {$use = $dets["manifests"][0]["manifestUri"];
+				  $wo = '[{ "loadedManifest":"'.$use.'", "slotAddress":"row1", "viewType": "ImageView"}]';
+				  $lo = '"1x1"';
+				 }
+			 }
+			}
 
 		// The mirador files could also be pulled from https://unpkg.com
 		// But version 2.7.2 did not seem to work, will try again once V3 is
