@@ -91,10 +91,10 @@ https://media.nga.gov/public/manifests/nga_highlights.json
 	$(function() {
        myMiradorInstance = Mirador({
          id: "viewer",
-         layout: "",
+         layout: "1x1",
          buildPath: "https://tanc-ahrc.github.io/mirador/mirador/",
-         data: [],
-         "windowObjects": [{"annotationLayer" : false, "bottomPanelVisible" : false}]
+         data: [{"manifestUri":"https:\/\/manifests.britishart.yale.edu\/manifest\/34","location":""},{"manifestUri":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843","location":""},{"manifestUri":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","location":""}],
+         "windowObjects": [{ "loadedManifest":"https://manifests.britishart.yale.edu/manifest/34", "slotAddress":"row1", "viewType": "ImageView", "annotationLayer" : false, "bottomPanelVisible" : false}]
        });
      });
 			function onLoad() {
