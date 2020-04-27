@@ -31,7 +31,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand"  href="./">
-  		<img id="page-logo" class="logo" title="Logo" src="graphics/github pages.png" 
+  		<img id="page-logo" class="logo" title="Logo" src="graphics/github-iiif.png" 
 				style="" alt="The National Gallery"/>
 		  </a>
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault"><ul class="navbar-nav">
@@ -84,17 +84,17 @@ https://media.nga.gov/public/manifests/nga_highlights.json
     
 	<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
 	<script src="https://unpkg.com/tether@1.4.7/dist/js/tether.min.js"></script>
-	<script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://tanc-ahrc.github.io/mirador/mirador/mirador.min.js"></script>
     <script>
 			
 	$(function() {
-       myMiradorInstance = Mirador({
-         id: "viewer",
-         layout: "1x1",
-         buildPath: "https://tanc-ahrc.github.io/mirador/mirador/",
-         data: [{"manifestUri":"https:\/\/manifests.britishart.yale.edu\/manifest\/34","location":""},{"manifestUri":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843","location":""},{"manifestUri":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","location":""}],
-         "windowObjects": [{ "loadedManifest":"https://manifests.britishart.yale.edu/manifest/34", "slotAddress":"row1", "viewType": "ImageView", "annotationLayer" : false, "bottomPanelVisible" : false}]
+     myMiradorInstance = Mirador({
+       id: "viewer",
+       layout: "1x1",
+       buildPath: "https://tanc-ahrc.github.io/mirador/mirador/",
+       data: [{"manifestUri":"https:\/\/manifests.britishart.yale.edu\/manifest\/34","location":""},{"manifestUri":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843","location":""},{"manifestUri":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","location":""}],
+       "windowObjects": [{ "loadedManifest":"https://manifests.britishart.yale.edu/manifest/34", "slotAddress":"row1", "viewType": "ImageView", "annotationLayer" : false, "bottomPanelVisible" : false}]
        });
      });
 			function onLoad() {
