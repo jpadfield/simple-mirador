@@ -617,22 +617,6 @@ function positionExtraContent ($str, $extra)
 	return ($str);	
 	}
 
-
-function listToManifest ($list)
-	{
-	$manifests = array();
-
-	foreach ($list as $k => $url)
-		{
-		$manifests[] = array(
-			"manifestUri" => $url,
-			"location" => "");
-		}
-
-	$manifests = json_encode($manifests);
-	
-	return($manifests);
-	}
 	
 function buildExtensionContent ($d, $pd)
 	{
@@ -642,6 +626,35 @@ function buildExtensionContent ($d, $pd)
   $content = parseLinks ($out["d"]["content"], 1);
 		
 	return (array($content, $out["pd"]));
+	}
+
+
+function displayCode ($array, $title=false, $format="json")
+	{
+	if ($format == "json")
+		{$json = json_encode($array, JSON_PRETTY_PRINT);
+		 $code = preg_replace('/[\\\\][\/]/', "/", $json);}
+	else
+		{$code = "";
+		 foreach($array as $value){
+     $code .= $value . "<br>";}}
+
+  if ($title)
+		{$title = "<h3>$title</h3>";}
+    
+	ob_start();			
+	echo <<<END
+	<br/<br/>
+	$title
+	<figure>
+		<pre style="overflow: hidden;border: 2px solid black;padding: 10px;"><code>${code}</code></pre>
+		<figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
+	</figure>
+END;
+		$codeHTML = ob_get_contents();
+		ob_end_clean(); // Don't send output to client
+
+  return ($codeHTML);
 	}
 
 ?>

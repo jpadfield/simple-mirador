@@ -12,15 +12,8 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://unpkg.com/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
-	<link href="https://tanc-ahrc.github.io/mirador/mirador/css/mirador-combined.min.css" rel="stylesheet" type="text/css">
     <style>
     
-#viewer {       
-      display: block;
-      width: 100%;
-      height: 600px;
-      position: relative;
-     }
     </style>
   </head>
 
@@ -54,33 +47,30 @@
 <div class="alert alert-info" role="alert"><h4 class="alert-heading">Summary</h4><p>This example page has been created using all of the available options in the <a href='https://jpadfield.github.io/simple-site/IIIF%20viewer.html'>mirador JSON file</a>.</p></div>
 
 <h3>The Viewer</h3>
-<div id="viewer"></div>
-<br/><br/>
-<h3>The Mirador JSON File</h3>
-
-<figure>
-		<pre style="overflow: hidden;border: 2px solid black;padding: 10px;">
-<code>{
-  "manifests": [
-    {"manifestUri": "https://iiif.harvardartmuseums.org/manifests/object/299843",
-    "location": "Harvard University"},
-    {"manifestUri": "https://media.nga.gov/public/manifests/nga_highlights.json",
-    "location": "National Gallery of Art"}		
-    ],
-  "windows": {
-    "layout": "1x2",
-    "slots": [
-      {"loadedManifest": "https://media.nga.gov/public/manifests/nga_highlights.json",
-      "slotAddress":"row1.column1",
-      "viewType": "ImageView",
-      "canvasID": "https://media.nga.gov/public/manifests/canvas/52178.json"},
-      {"loadedManifest": "https://iiif.harvardartmuseums.org/manifests/object/299843",
-      "slotAddress":"row1.column2",
-      "viewType": "ImageView"}
-      ]}
-}
-</code></pre><figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
-</figure><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <br/>
+<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;" id="mirador"></div></div></div>	<br/<br/>
+	<h3>The Mirador JSON File</h3>
+	<figure>
+		<pre style="overflow: hidden;border: 2px solid black;padding: 10px;"><code>{
+    "manifests": {
+        "https://iiif.harvardartmuseums.org/manifests/object/299843": {
+            "provider": "Harvard University"
+        },
+        "https://media.nga.gov/public/manifests/nga_highlights.json": {
+            "provider": "National Gallery of Art"
+        }
+    },
+    "windows": [
+        {
+            "manifestId": "https://media.nga.gov/public/manifests/nga_highlights.json",
+            "canvasId": "https://media.nga.gov/public/manifests/canvas/52178.json"
+        },
+        {
+            "manifestId": "https://iiif.harvardartmuseums.org/manifests/object/299843"
+        }
+    ]
+}</code></pre>
+		<figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
+	</figure><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <br/>
 			</div><!--/span-->
 			
 			
@@ -101,18 +91,15 @@
 	<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
 	<script src="https://unpkg.com/tether@1.4.7/dist/js/tether.min.js"></script>
 	<script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="https://tanc-ahrc.github.io/mirador/mirador/mirador.min.js"></script>
-	<script src="https://tanc-ahrc.github.io/mirador/mirador/mirador.min.js.map"></script>
+	<script src="https://unpkg.com/mirador@3.0.0-beta.8/dist/mirador.min.js"></script>
     <script>
-			
-	$(function() {
-     myMiradorInstance = Mirador({
-       id: "viewer",
-       layout: "1x2",
-       buildPath: "https://tanc-ahrc.github.io/mirador/mirador/",
-       data: [{"manifestUri":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843","location":"Harvard University"},{"manifestUri":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","location":"National Gallery of Art"}],
-       "windowObjects": [{"loadedManifest":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","slotAddress":"row1.column1","viewType":"ImageView","canvasID":"https:\/\/media.nga.gov\/public\/manifests\/canvas\/52178.json","bottomPanelVisible":false,"annotationLayer":false},{"loadedManifest":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843","slotAddress":"row1.column2","viewType":"ImageView","bottomPanelVisible":false,"annotationLayer":false}]
-       });
+				$(function() {
+
+var myMiradorInstance = Mirador.viewer({
+       id: "mirador",
+       windows: [{"manifestId":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","canvasId":"https:\/\/media.nga.gov\/public\/manifests\/canvas\/52178.json"},{"manifestId":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843"}],
+       manifests: {"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843":{"provider":"Harvard University"},"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json":{"provider":"National Gallery of Art"}}
+       });     
      });
 			function onLoad() {
 				$(function() {

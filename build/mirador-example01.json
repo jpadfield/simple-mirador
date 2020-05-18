@@ -1,12 +1,16 @@
 {
-  "manifests": [
-    {"manifestUri": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json", "location": "Hunterian Art Gallery"}		
-  ],
-  "windows": {
-    "layout": "1x2",
-    "slots": [
-      {"loadedManifest": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json", "slotAddress":"row1.column1", "viewType": "ImageView", "canvasID":"https://research.ng-london.org.uk/public/manifests/sequence/iiif/M-1391-00-000010-PYR.tif/normal.json"},
-      {"loadedManifest": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json", "slotAddress":"row1.column2", "viewType": "ImageView", "canvasID": "https://research.ng-london.org.uk/public/manifests/sequence/iiif/M-1391-00-000014-PYR.tif/normal.json"}
-    ]
-  }
+	"manifests": {
+		"https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json": {
+			"provider": "Hunterian Art Gallery"
+		}
+	},
+	"windows": [{
+			"manifestId": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json",
+			"canvasId": "https://research.ng-london.org.uk/public/manifests/sequence/iiif/M-1391-00-000010-PYR.tif/normal.json"
+		},
+		{
+			"manifestId": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json",
+			"canvasId": "https://research.ng-london.org.uk/public/manifests/sequence/iiif/M-1391-00-000014-PYR.tif/normal.json"
+		}
+	]
 }

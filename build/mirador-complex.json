@@ -1,28 +1,23 @@
 	{
-	"manifests": [
-    {"manifestUri": "https://data.getty.edu/museum/api/iiif/865/manifest.json",
-    "location": "The J. Paul Getty Museum"}, 
-    {"manifestUri": "https://data.getty.edu/museum/api/iiif/248/manifest.json",
-    "location": "The J. Paul Getty Museum"},
-    {"manifestUri": "https://media.nga.gov/public/manifests/nga_highlights.json",
-    "location": "National Gallery of Art"},
-    {"manifestUri": "https://iiif.harvardartmuseums.org/manifests/object/299964",
-    "location": "Harvard Art Museums"},
-    {"manifestUri": "https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest",
-    "location": "The Frick Collection"},
-    {"manifestUri": "https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json",
-    "location": "The National Gallery"}		
-		],
-	"windows": {
-		"layout": "2x3",
-		"slots": [
-		{ "loadedManifest": "https://data.getty.edu/museum/api/iiif/865/manifest.json", "slotAddress":"row1.column1.row1", "viewType": "ImageView", "canvasID":""},
-		{ "loadedManifest": "https://data.getty.edu/museum/api/iiif/248/manifest.json", "slotAddress":"row1.column2.row1", "viewType": "ImageView", "canvasID":""},
-		{ "loadedManifest": "https://media.nga.gov/public/manifests/nga_highlights.json", "slotAddress":"row1.column3.row1", "viewType": "ImageView", "canvasID":"https://media.nga.gov/public/manifests/canvas/1225.json"},
-		{ "loadedManifest": "https://iiif.harvardartmuseums.org/manifests/object/299964", "slotAddress":"row1.column1.row2", "viewType": "ImageView", "canvasID":""},
-		{ "loadedManifest": "https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest", "slotAddress":"row1.column2.row2", "viewType": "ImageView", "canvasID":""},
-		{ "loadedManifest": "https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json", "slotAddress":"row1.column3.row2", "viewType": "ImageView", "canvasID":"https://media.ng-london.org.uk/public/manifests/sequence/srv/009-01XE-0000/normal.json"}
-		]}
+	"manifests": {
+		"https://data.getty.edu/museum/api/iiif/865/manifest.json":
+    {"provider": "The J. Paul Getty Museum"}, "https://data.getty.edu/museum/api/iiif/248/manifest.json":
+    {"provider": "The J. Paul Getty Museum"},"https://media.nga.gov/public/manifests/nga_highlights.json":
+    {"provider": "National Gallery of Art"},"https://iiif.harvardartmuseums.org/manifests/object/299964":
+    {"provider": "Harvard Art Museums"},"https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest":
+    {"provider": "The Frick Collection"},"https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json":
+    {"provider": "The National Gallery"}		
+		},
+	"windows": [
+		{ "manifestId": "https://data.getty.edu/museum/api/iiif/865/manifest.json" },
+		{ "manifestId": "https://data.getty.edu/museum/api/iiif/248/manifest.json" },
+		{ "manifestId": "https://media.nga.gov/public/manifests/nga_highlights.json",
+			"canvasId":"https://media.nga.gov/public/manifests/canvas/1225.json"},
+		{ "manifestId": "https://iiif.harvardartmuseums.org/manifests/object/299964" },
+		{ "manifestId": "https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest" },
+		{ "manifestId": "https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json",
+			"canvasId":"https://media.ng-london.org.uk/public/manifests/sequence/srv/009-01XE-0000/normal.json"}
+		]
 	}
 
 

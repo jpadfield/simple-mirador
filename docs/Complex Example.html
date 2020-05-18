@@ -12,15 +12,8 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://unpkg.com/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
-	<link href="https://tanc-ahrc.github.io/mirador/mirador/css/mirador-combined.min.css" rel="stylesheet" type="text/css">
     <style>
     
-#viewer {       
-      display: block;
-      width: 100%;
-      height: 600px;
-      position: relative;
-     }
     </style>
   </head>
 
@@ -54,41 +47,55 @@
 <div class="alert alert-info" role="alert"><h4 class="alert-heading">Summary</h4><p>This complex example page has been created using all of the available options in the <a href='https://jpadfield.github.io/simple-site/IIIF%20viewer.html'>mirador JSON file</a>.</p></div>
 
 <h3>The Viewer</h3>
-<div id="viewer"></div>
-<br/><br/>
-<h3>The Mirador JSON File</h3>
-
-<figure>
-		<pre style="overflow: hidden;border: 2px solid black;padding: 10px;">
-<code>{
-  "manifests": [
-    {"manifestUri": "https://data.getty.edu/museum/api/iiif/865/manifest.json",
-    "location": "The J. Paul Getty Museum"}, 
-    {"manifestUri": "https://data.getty.edu/museum/api/iiif/248/manifest.json",
-    "location": "The J. Paul Getty Museum"},
-    {"manifestUri": "https://media.nga.gov/public/manifests/nga_highlights.json",
-    "location": "National Gallery of Art"},
-    {"manifestUri": "https://iiif.harvardartmuseums.org/manifests/object/299964",
-    "location": "Harvard Art Museums"},
-    {"manifestUri": "https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest",
-    "location": "The Frick Collection"},
-    {"manifestUri": "https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json",
-    "location": "The National Gallery"}		
-    ],
-  "windows": {
-    "layout": "2x3",
-    "slots": [
-      {"loadedManifest": "https://data.getty.edu/museum/api/iiif/865/manifest.json", "slotAddress":"row1.column1.row1", "viewType": "ImageView", "canvasID":""},
-      {"loadedManifest": "https://data.getty.edu/museum/api/iiif/248/manifest.json", "slotAddress":"row1.column2.row1", "viewType": "ImageView", "canvasID":""},
-      {"loadedManifest": "https://media.nga.gov/public/manifests/nga_highlights.json", "slotAddress":"row1.column3.row1", "viewType": "ImageView", "canvasID":"https://media.nga.gov/public/manifests/canvas/1225.json"},
-      {"loadedManifest": "https://iiif.harvardartmuseums.org/manifests/object/299964", "slotAddress":"row1.column1.row2", "viewType": "ImageView", "canvasID":""},
-      {"loadedManifest": "https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest", "slotAddress":"row1.column2.row2", "viewType": "ImageView", "canvasID":""},
-      {"loadedManifest": "https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json", "slotAddress":"row1.column3.row2", "viewType": "ImageView", "canvasID":"https://media.ng-london.org.uk/public/manifests/sequence/srv/009-01XE-0000/normal.json"}
-     ]
-    }
-  }
-</code></pre><figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
-</figure><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <br/>
+<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;" id="mirador"></div></div></div>	<br/<br/>
+	<h3>The Mirador JSON File</h3>
+	<figure>
+		<pre style="overflow: hidden;border: 2px solid black;padding: 10px;"><code>{
+    "manifests": {
+        "https://data.getty.edu/museum/api/iiif/865/manifest.json": {
+            "provider": "The J. Paul Getty Museum"
+        },
+        "https://data.getty.edu/museum/api/iiif/248/manifest.json": {
+            "provider": "The J. Paul Getty Museum"
+        },
+        "https://media.nga.gov/public/manifests/nga_highlights.json": {
+            "provider": "National Gallery of Art"
+        },
+        "https://iiif.harvardartmuseums.org/manifests/object/299964": {
+            "provider": "Harvard Art Museums"
+        },
+        "https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest": {
+            "provider": "The Frick Collection"
+        },
+        "https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json": {
+            "provider": "The National Gallery"
+        }
+    },
+    "windows": [
+        {
+            "manifestId": "https://data.getty.edu/museum/api/iiif/865/manifest.json"
+        },
+        {
+            "manifestId": "https://data.getty.edu/museum/api/iiif/248/manifest.json"
+        },
+        {
+            "manifestId": "https://media.nga.gov/public/manifests/nga_highlights.json",
+            "canvasId": "https://media.nga.gov/public/manifests/canvas/1225.json"
+        },
+        {
+            "manifestId": "https://iiif.harvardartmuseums.org/manifests/object/299964"
+        },
+        {
+            "manifestId": "https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest"
+        },
+        {
+            "manifestId": "https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json",
+            "canvasId": "https://media.ng-london.org.uk/public/manifests/sequence/srv/009-01XE-0000/normal.json"
+        }
+    ]
+}</code></pre>
+		<figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
+	</figure><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <br/>
 			</div><!--/span-->
 			
 			
@@ -109,18 +116,15 @@
 	<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
 	<script src="https://unpkg.com/tether@1.4.7/dist/js/tether.min.js"></script>
 	<script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="https://tanc-ahrc.github.io/mirador/mirador/mirador.min.js"></script>
-	<script src="https://tanc-ahrc.github.io/mirador/mirador/mirador.min.js.map"></script>
+	<script src="https://unpkg.com/mirador@3.0.0-beta.8/dist/mirador.min.js"></script>
     <script>
-			
-	$(function() {
-     myMiradorInstance = Mirador({
-       id: "viewer",
-       layout: "2x3",
-       buildPath: "https://tanc-ahrc.github.io/mirador/mirador/",
-       data: [{"manifestUri":"https:\/\/data.getty.edu\/museum\/api\/iiif\/865\/manifest.json","location":"The J. Paul Getty Museum"},{"manifestUri":"https:\/\/data.getty.edu\/museum\/api\/iiif\/248\/manifest.json","location":"The J. Paul Getty Museum"},{"manifestUri":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","location":"National Gallery of Art"},{"manifestUri":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299964","location":"Harvard Art Museums"},{"manifestUri":"https:\/\/collections.frick.org\/apis\/iiif\/presentation\/v2\/objects-266\/manifest","location":"The Frick Collection"},{"manifestUri":"https:\/\/media.ng-london.org.uk\/iiif\/001-043H-0000\/manifest.json","location":"The National Gallery"}],
-       "windowObjects": [{"loadedManifest":"https:\/\/data.getty.edu\/museum\/api\/iiif\/865\/manifest.json","slotAddress":"row1.column1.row1","viewType":"ImageView","canvasID":"","bottomPanelVisible":false,"annotationLayer":false},{"loadedManifest":"https:\/\/data.getty.edu\/museum\/api\/iiif\/248\/manifest.json","slotAddress":"row1.column2.row1","viewType":"ImageView","canvasID":"","bottomPanelVisible":false,"annotationLayer":false},{"loadedManifest":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","slotAddress":"row1.column3.row1","viewType":"ImageView","canvasID":"https:\/\/media.nga.gov\/public\/manifests\/canvas\/1225.json","bottomPanelVisible":false,"annotationLayer":false},{"loadedManifest":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299964","slotAddress":"row1.column1.row2","viewType":"ImageView","canvasID":"","bottomPanelVisible":false,"annotationLayer":false},{"loadedManifest":"https:\/\/collections.frick.org\/apis\/iiif\/presentation\/v2\/objects-266\/manifest","slotAddress":"row1.column2.row2","viewType":"ImageView","canvasID":"","bottomPanelVisible":false,"annotationLayer":false},{"loadedManifest":"https:\/\/media.ng-london.org.uk\/iiif\/001-043H-0000\/manifest.json","slotAddress":"row1.column3.row2","viewType":"ImageView","canvasID":"https:\/\/media.ng-london.org.uk\/public\/manifests\/sequence\/srv\/009-01XE-0000\/normal.json","bottomPanelVisible":false,"annotationLayer":false}]
-       });
+				$(function() {
+
+var myMiradorInstance = Mirador.viewer({
+       id: "mirador",
+       windows: [{"manifestId":"https:\/\/data.getty.edu\/museum\/api\/iiif\/865\/manifest.json"},{"manifestId":"https:\/\/data.getty.edu\/museum\/api\/iiif\/248\/manifest.json"},{"manifestId":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","canvasId":"https:\/\/media.nga.gov\/public\/manifests\/canvas\/1225.json"},{"manifestId":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299964"},{"manifestId":"https:\/\/collections.frick.org\/apis\/iiif\/presentation\/v2\/objects-266\/manifest"},{"manifestId":"https:\/\/media.ng-london.org.uk\/iiif\/001-043H-0000\/manifest.json","canvasId":"https:\/\/media.ng-london.org.uk\/public\/manifests\/sequence\/srv\/009-01XE-0000\/normal.json"}],
+       manifests: {"https:\/\/data.getty.edu\/museum\/api\/iiif\/865\/manifest.json":{"provider":"The J. Paul Getty Museum"},"https:\/\/data.getty.edu\/museum\/api\/iiif\/248\/manifest.json":{"provider":"The J. Paul Getty Museum"},"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json":{"provider":"National Gallery of Art"},"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299964":{"provider":"Harvard Art Museums"},"https:\/\/collections.frick.org\/apis\/iiif\/presentation\/v2\/objects-266\/manifest":{"provider":"The Frick Collection"},"https:\/\/media.ng-london.org.uk\/iiif\/001-043H-0000\/manifest.json":{"provider":"The National Gallery"}}
+       });     
      });
 			function onLoad() {
 				$(function() {
