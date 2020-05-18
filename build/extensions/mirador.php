@@ -46,19 +46,21 @@ function extensionMirador ($d, $pd)
       }
     }
 
-  // The mirador files could also be pulled from https://unpkg.com
-	// But version 2.7.2 did not seem to work, will try again once V3 is
+	// https://unpkg.com version 2.7.2 did not seem to work, will try again once V3 is
 	// fully released. - jpadfield 30/03/20
-	$pd["extra_css_scripts"][] =
-		"https://tanc-ahrc.github.io/mirador/mirador/css/mirador-combined.css";
-	$pd["extra_js_scripts"][] =
-		"https://tanc-ahrc.github.io/mirador/mirador/mirador.min.js";
+	$mirador_path = "https://unpkg.com/mirador@2.6.0/dist/";
+	$mirador_path = "https://tanc-ahrc.github.io/mirador/mirador/";
+	
+  	
+	$pd["extra_css_scripts"][] = $mirador_path."css/mirador-combined.min.css";
+	$pd["extra_js_scripts"][] = $mirador_path."mirador.min.js";
+	$pd["extra_js_scripts"][] = $mirador_path."mirador.min.js.map";
 	$pd["extra_js"] .= '
 	$(function() {
      myMiradorInstance = Mirador({
        id: "viewer",
        layout: '.$lo.',
-       buildPath: "https://tanc-ahrc.github.io/mirador/mirador/",
+       buildPath: "'.$mirador_path.'",
        data: '.$mans.',
        "windowObjects": '.$wo.'
        });
