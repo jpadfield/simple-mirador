@@ -13,7 +13,7 @@
 	<link href="https://unpkg.com/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
     <style>
-    
+    .fixed-top {z-index:1111;}
     </style>
   </head>
 
@@ -63,11 +63,11 @@
     "windows": [
         {
             "manifestId": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json",
-            "canvasId": "https://research.ng-london.org.uk/public/manifests/sequence/iiif/M-1391-00-000010-PYR.tif/normal.json"
+            "canvasIndex": 3
         },
         {
             "manifestId": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json",
-            "canvasId": "https://research.ng-london.org.uk/public/manifests/sequence/iiif/M-1391-00-000014-PYR.tif/normal.json"
+            "canvasIndex": 1
         }
     ]
 }</code></pre>
@@ -99,7 +99,7 @@
 
 var myMiradorInstance = Mirador.viewer({
        id: "mirador",
-       windows: [{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/m1391\/manifest.json","canvasId":"https:\/\/research.ng-london.org.uk\/public\/manifests\/sequence\/iiif\/M-1391-00-000010-PYR.tif\/normal.json"},{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/m1391\/manifest.json","canvasId":"https:\/\/research.ng-london.org.uk\/public\/manifests\/sequence\/iiif\/M-1391-00-000014-PYR.tif\/normal.json"}],
+       windows: [{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/m1391\/manifest.json","canvasIndex":3},{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/m1391\/manifest.json","canvasIndex":1}],
        manifests: {"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/m1391\/manifest.json":{"provider":"Hunterian Art Gallery"}}
        });     
      });

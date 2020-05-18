@@ -9,10 +9,11 @@
 	},
 	"windows": [{
 			"manifestId": "https://media.nga.gov/public/manifests/nga_highlights.json",
-			"canvasId": "https://media.nga.gov/public/manifests/canvas/52178.json"
+			"canvasIndex": 0
 		},
 		{
-			"manifestId": "https://iiif.harvardartmuseums.org/manifests/object/299843"
+			"manifestId": "https://iiif.harvardartmuseums.org/manifests/object/299843",
+			"canvasIndex": 3
 		}
 	]
 }

@@ -13,7 +13,7 @@
 	<link href="https://unpkg.com/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
     <style>
-    
+    .fixed-top {z-index:1111;}
     </style>
   </head>
 
@@ -62,10 +62,11 @@
     "windows": [
         {
             "manifestId": "https://media.nga.gov/public/manifests/nga_highlights.json",
-            "canvasId": "https://media.nga.gov/public/manifests/canvas/52178.json"
+            "canvasIndex": 0
         },
         {
-            "manifestId": "https://iiif.harvardartmuseums.org/manifests/object/299843"
+            "manifestId": "https://iiif.harvardartmuseums.org/manifests/object/299843",
+            "canvasIndex": 3
         }
     ]
 }</code></pre>
@@ -97,7 +98,7 @@
 
 var myMiradorInstance = Mirador.viewer({
        id: "mirador",
-       windows: [{"manifestId":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","canvasId":"https:\/\/media.nga.gov\/public\/manifests\/canvas\/52178.json"},{"manifestId":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843"}],
+       windows: [{"manifestId":"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json","canvasIndex":0},{"manifestId":"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843","canvasIndex":3}],
        manifests: {"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843":{"provider":"Harvard University"},"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json":{"provider":"National Gallery of Art"}}
        });     
      });

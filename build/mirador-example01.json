@@ -6,11 +6,11 @@
 	},
 	"windows": [{
 			"manifestId": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json",
-			"canvasId": "https://research.ng-london.org.uk/public/manifests/sequence/iiif/M-1391-00-000010-PYR.tif/normal.json"
+			"canvasIndex": 3
 		},
 		{
 			"manifestId": "https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json",
-			"canvasId": "https://research.ng-london.org.uk/public/manifests/sequence/iiif/M-1391-00-000014-PYR.tif/normal.json"
+			"canvasIndex": 1
 		}
 	]
 }
