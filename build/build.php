@@ -31,6 +31,10 @@ if (is_file("sub-pages.json"))
 else
 	{$expages = array();}
 
+// Variable used to add additional code at the bottom of a page -
+// the main purpose of this is to append the json code when the
+// system is used to present demo pages.
+$extraHTML = "";
 	
 $pnames = array();	
 $pages = getRemoteJsonDetails("pages.json", false, true);
@@ -356,8 +360,9 @@ function writeTSPage ()
 	
 function writePage ($name, $d)
 	{	
-	global $gdp, $menuList, $extensionList, $fcount, $footnotes;
+	global $gdp, $menuList, $extensionList, $fcount, $footnotes, $extraHTML;
 
+	$extraHTML = "";
 	$footnotes = array();	
 	$pd = $gdp;
 		
@@ -377,7 +382,7 @@ function writePage ($name, $d)
 		 $pd = $ta[1];}
 	else
 		{$content = parseLinks ($d["content"], 1);}
-				
+
 	$pd["grid"] = array(
 		"topjumbotron" => "<h2>$d[title]</h2>",
 		"bottomjumbotron" => "",
@@ -400,6 +405,14 @@ function writePage ($name, $d)
 				array (
 					"class" => "col-lg-6",
 					"content" => $d["content right"]);}
+
+	// Used to display the JSON used to create a given page for demos
+	if (isset($d["displaycode"]))
+		{unset($d["bcs"]);
+		 $extraHTML .= displayCode ($d, "Page JSON Object");
+		 $pd["grid"]["rows"][2] = array( array (
+					"class" => "col-12 col-lg-12",
+					"content" => $extraHTML));}
 					
 	$pd["body"] = buildSimpleBSGrid ($pd["grid"]);
 	$html = buildBootStrapNGPage ($pd);
@@ -629,10 +642,11 @@ function buildExtensionContent ($d, $pd)
 	}
 
 
-function displayCode ($array, $title=false, $format="json")
-	{
+function displayCode ($array, $title=false, $format="json", $caption=false)
+	{		
 	if ($format == "json")
 		{$json = json_encode($array, JSON_PRETTY_PRINT);
+		 $json = htmlspecialchars ($json);
 		 $code = preg_replace('/[\\\\][\/]/', "/", $json);}
 	else
 		{$code = "";
@@ -641,14 +655,17 @@ function displayCode ($array, $title=false, $format="json")
 
   if ($title)
 		{$title = "<h3>$title</h3>";}
+
+	if (!$caption)
+		{$caption = "The complete JSON object used to define this content and layout of this page.";}
     
 	ob_start();			
 	echo <<<END
 	<br/<br/>
 	$title
 	<figure>
-		<pre style="overflow: hidden;border: 2px solid black;padding: 10px;"><code>${code}</code></pre>
-		<figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
+		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>${code}</code></pre>
+		<figcaption class=\"figure-caption\">$caption</figcaption>
 	</figure>
 END;
 		$codeHTML = ob_get_contents();

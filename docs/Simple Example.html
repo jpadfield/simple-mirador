@@ -47,21 +47,34 @@
 <div class="alert alert-info" role="alert"><h4 class="alert-heading">Summary</h4><p>This simple example page has been created using only the manifest section of the <a href='https://jpadfield.github.io/simple-site/IIIF%20viewer.html'>mirador JSON file</a>.</p></div>
 
 <h3>The Viewer</h3>
-<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;" id="mirador"></div></div></div>	<br/<br/>
+<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;" id="mirador"></div></div></div><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12">	<br/<br/>
 	<h3>The Mirador JSON File</h3>
 	<figure>
-		<pre style="overflow: hidden;border: 2px solid black;padding: 10px;"><code>{
-    "manifests": {
-        "https://media.ng-london.org.uk/iiif/001-0145-0000/manifest.json": {
-            "provider": "The National Gallery, London"
+		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
+    &quot;manifests&quot;: {
+        &quot;https://media.ng-london.org.uk/iiif/001-0145-0000/manifest.json&quot;: {
+            &quot;provider&quot;: &quot;The National Gallery, London&quot;
         },
-        "https://media.nga.gov/public/manifests/nga_highlights.json": {
-            "provider": "National Gallery of Art"
+        &quot;https://media.nga.gov/public/manifests/nga_highlights.json&quot;: {
+            &quot;provider&quot;: &quot;National Gallery of Art&quot;
         }
     }
 }</code></pre>
 		<figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
-	</figure><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <br/>
+	</figure>	<br/<br/>
+	<h3>Page JSON Object</h3>
+	<figure>
+		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
+    &quot;parent&quot;: &quot;&quot;,
+    &quot;class&quot;: &quot;mirador&quot;,
+    &quot;file&quot;: &quot;mirador-simple.json&quot;,
+    &quot;title&quot;: &quot;&lt;b&gt;Simple Mirador&lt;/b&gt; - The Simple Example&quot;,
+    &quot;content&quot;: &quot;&lt;p&gt;This extension uses the [IIIF|https://iiif.io] image viewer [Mirador|https://projectmirador.org/] to produce a customised presentation of a bespoke selection of IIIF manifests[@@IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see https://iiif.io/api/presentation/2.1/#table-of-contents]. It is an example of a special page that can be added presented using the [simple-site|https://github.com/jpadfield/simple-site] project.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;For more information about the simple-site project and details about how this example work please see the [simple-site webpages|https://jpadfield.github.io/simple-site/].&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;div class=\&quot;alert alert-info\&quot; role=\&quot;alert\&quot;&gt;&lt;h4 class=\&quot;alert-heading\&quot;&gt;Summary&lt;/h4&gt;&lt;p&gt;This simple example page has been created using only the manifest section of the [mirador JSON file|https://jpadfield.github.io/simple-site/IIIF%20viewer.html].&lt;/p&gt;&lt;/div&gt;\r\n\r\n&lt;h3&gt;The Viewer&lt;/h3&gt;\r\n[##]&quot;,
+    &quot;content right&quot;: &quot;&quot;,
+    &quot;displaycode&quot;: true
+}</code></pre>
+		<figcaption class=\"figure-caption\">The complete JSON object used to define this content and layout of this page.</figcaption>
+	</figure></div><!--/span--></div><!--/row-->    <br/>
 			</div><!--/span-->
 			
 			
@@ -91,7 +104,8 @@ var myMiradorInstance = Mirador.viewer({
        windows: [{
 					"manifestId": "https://media.ng-london.org.uk/iiif/001-0145-0000/manifest.json"
 					}],
-       manifests: {"https:\/\/media.ng-london.org.uk\/iiif\/001-0145-0000\/manifest.json":{"provider":"The National Gallery, London"},"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json":{"provider":"National Gallery of Art"}}
+       manifests: {"https:\/\/media.ng-london.org.uk\/iiif\/001-0145-0000\/manifest.json":{"provider":"The National Gallery, London"},"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json":{"provider":"National Gallery of Art"}},
+       
        });     
      });
 			function onLoad() {

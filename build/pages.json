@@ -9,28 +9,32 @@
 		"file": "mirador.json",
 		"title": "<b>Simple Mirador</b> - The Standard Example",
 		"content": "<p>This extension uses the [IIIF|https:\/\/iiif.io] image viewer [Mirador|https:\/\/projectmirador.org\/] to produce a customised presentation of a bespoke selection of IIIF manifests[@@IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see https:\/\/iiif.io\/api\/presentation\/2.1\/#table-of-contents]. It is an example of a special page that can be added presented using the [simple-site|https:\/\/github.com\/jpadfield\/simple-site] project.<\/p>\r\n\r\n<p><b>For more information about the simple-site project and details about how this example work please see the [simple-site webpages|https:\/\/jpadfield.github.io\/simple-site\/].<\/b><\/p>\r\n\r\n<div class=\"alert alert-info\" role=\"alert\"><h4 class=\"alert-heading\">Summary<\/h4><p>This example page has been created using all of the available options in the [mirador JSON file|https:\/\/jpadfield.github.io\/simple-site\/IIIF%20viewer.html].<\/p><\/div>\r\n\r\n<h3>The Viewer<\/h3>\r\n[##]",
-		"content right": ""
+		"content right": "",
+		"displaycode": true
 	},
 	"Simple Example": {
 		"class": "mirador",
 		"file": "mirador-simple.json",
 		"title": "<b>Simple Mirador</b> - The Simple Example",
 		"content": "<p>This extension uses the [IIIF|https:\/\/iiif.io] image viewer [Mirador|https:\/\/projectmirador.org\/] to produce a customised presentation of a bespoke selection of IIIF manifests[@@IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see https:\/\/iiif.io\/api\/presentation\/2.1\/#table-of-contents]. It is an example of a special page that can be added presented using the [simple-site|https:\/\/github.com\/jpadfield\/simple-site] project.<\/p>\r\n\r\n<p><b>For more information about the simple-site project and details about how this example work please see the [simple-site webpages|https:\/\/jpadfield.github.io\/simple-site\/].<\/b><\/p>\r\n\r\n<div class=\"alert alert-info\" role=\"alert\"><h4 class=\"alert-heading\">Summary<\/h4><p>This simple example page has been created using only the manifest section of the [mirador JSON file|https:\/\/jpadfield.github.io\/simple-site\/IIIF%20viewer.html].<\/p><\/div>\r\n\r\n<h3>The Viewer<\/h3>\r\n[##]",
-		"content right": ""
+		"content right": "",
+		"displaycode": true
 	},
 	"Simple Text Example": {
 		"class": "mirador",
 		"file": "mirador-simple.txt",
 		"title": "<b>Simple Mirador</b> - The Text Example",
 		"content": "<p>This extension uses the [IIIF|https:\/\/iiif.io] image viewer [Mirador|https:\/\/projectmirador.org\/] to produce a customised presentation of a bespoke selection of IIIF manifests[@@IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see https:\/\/iiif.io\/api\/presentation\/2.1\/#table-of-contents]. It is an example of a special page that can be added presented using the [simple-site|https:\/\/github.com\/jpadfield\/simple-site] project.<\/p>\r\n\r\n<p><b>For more information about the simple-site project and details about how this example work please see the [simple-site webpages|https:\/\/jpadfield.github.io\/simple-site\/].<\/b><\/p>\r\n\r\n<div class=\"alert alert-info\" role=\"alert\"><h4 class=\"alert-heading\">Summary<\/h4><p>This very simple example page has been created using only a simple text list of IIIF manifests, for more information see [here|https:\/\/jpadfield.github.io\/simple-site\/IIIF%20viewer.html].<\/p><\/div>\r\n\r\n<h3>The Viewer<\/h3>\r\n[##]",
-		"content right": ""
+		"content right": "",
+		"displaycode": true
 	},
 	"Complex Example": {
 		"class": "mirador",
 		"file": "mirador-complex.json",
 		"title": "<b>Simple Mirador</b> - The Complex Example",
 		"content": "<p>This extension uses the [IIIF|https:\/\/iiif.io] image viewer [Mirador|https:\/\/projectmirador.org\/] to produce a customised presentation of a bespoke selection of IIIF manifests[@@IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see https:\/\/iiif.io\/api\/presentation\/2.1\/#table-of-contents]. It is an example of a special page that can be added presented using the [simple-site|https:\/\/github.com\/jpadfield\/simple-site] project.<\/p>\r\n\r\n<p><b>For more information about the simple-site project and details about how this example work please see the [simple-site webpages|https:\/\/jpadfield.github.io\/simple-site\/].<\/b><\/p>\r\n\r\n<div class=\"alert alert-info\" role=\"alert\"><h4 class=\"alert-heading\">Summary<\/h4><p>This complex example page has been created using all of the available options in the [mirador JSON file|https:\/\/jpadfield.github.io\/simple-site\/IIIF%20viewer.html].<\/p><\/div>\r\n\r\n<h3>The Viewer<\/h3>\r\n[##]",
-		"content right": ""
+		"content right": "",
+		"displaycode": true
 	},
 	"Further Examples": {
 		"title": "<b>Simple Mirador</b> - Further Examples",

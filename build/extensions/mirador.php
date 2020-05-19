@@ -6,9 +6,12 @@ $extensionList["mirador"] = "extensionMirador";
 
 function extensionMirador ($d, $pd)
   {
+	global $extraHTML;
+	$workspace = false;
   $mans = '[]';
 	$wo = '';
 	$codeHTML = "";
+	$codecaption = "The complete mirador JSON file used to define the manifests and images presented in this example.";
 		
 	if (isset($d["file"]) and file_exists($d["file"]))
 		{
@@ -19,7 +22,9 @@ function extensionMirador ($d, $pd)
 			$dets = getRemoteJsonDetails($d["file"], false, false);
 			$dets = explode(PHP_EOL, trim($dets));
 
-			$codeHTML = displayCode ($dets, "The Mirador TXT File", "txt");
+			// Used to display the JSON used to create a given page for demos
+			if (isset($d["displaycode"]))
+				{$extraHTML .= displayCode ($dets, "The Mirador TXT File", "txt", $codecaption);}
 
 			if (preg_match('/^http.+/', $dets[0]))
 				{$mans = listToManifest ($dets);
@@ -28,9 +33,15 @@ function extensionMirador ($d, $pd)
 					}]';}
       }
     else {
-			$codeHTML = displayCode ($dets, "The Mirador JSON File");
+			// Used to display the JSON used to create a given page for demos
+			if (isset($d["displaycode"]))
+				{$extraHTML .= displayCode ($dets, "The Mirador JSON File", "json", $codecaption);}
+				
 			$mans = json_encode($dets["manifests"]);			 
 			 
+			if (isset($dets["workspace"]))
+			 {$workspace = "workspace: ".json_encode($dets["workspace"]);}			 
+
 			if (isset($dets["windows"]))
 			 {$wo = json_encode($dets["windows"]);}
 			else
@@ -54,7 +65,8 @@ function extensionMirador ($d, $pd)
 var myMiradorInstance = Mirador.viewer({
        id: "mirador",
        windows: $wo,
-       manifests: $mans
+       manifests: $mans,
+       $workspace
        });     
      });
 END;
