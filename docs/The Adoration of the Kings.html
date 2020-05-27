@@ -52,6 +52,27 @@
 
 <h3>The Viewer</h3>
 <div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;" id="mirador"></div></div></div><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12">	<br/<br/>
+	<h3>The Mirador JSON File</h3>
+	<figure>
+		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
+    &quot;manifests&quot;: {
+        &quot;https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json&quot;: {
+            &quot;provider&quot;: &quot;Hunterian Art Gallery&quot;
+        }
+    },
+    &quot;windows&quot;: [
+        {
+            &quot;manifestId&quot;: &quot;https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json&quot;,
+            &quot;canvasIndex&quot;: 3
+        },
+        {
+            &quot;manifestId&quot;: &quot;https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json&quot;,
+            &quot;canvasIndex&quot;: 1
+        }
+    ]
+}</code></pre>
+		<figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
+	</figure>	<br/<br/>
 	<h3>Page JSON Object</h3>
 	<figure>
 		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
@@ -92,8 +113,8 @@
 
 var myMiradorInstance = Mirador.viewer({
        id: "mirador",
-       windows: ,
-       manifests: [],
+       windows: [{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/ng2790\/manifest.json","canvasIndex":3},{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/ng2790\/manifest.json","canvasIndex":1}],
+       manifests: {"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/ng2790\/manifest.json":{"provider":"Hunterian Art Gallery"}},
        
        });     
      });
