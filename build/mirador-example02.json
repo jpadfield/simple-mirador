@@ -1,4 +1,3 @@
-t 
 {
 	"manifests": {
 		"https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json": {
@@ -7,11 +6,7 @@ t
 	},
 	"windows": [{
 			"manifestId": "https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json",
-			"canvasIndex": 0
-		},
-		{
-			"manifestId": "https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json",
-			"canvasIndex": 24
+			 "view": "gallery"
 		}
 	]
 }
