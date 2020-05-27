@@ -7,11 +7,11 @@
 	},
 	"windows": [{
 			"manifestId": "https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json",
-			"canvasIndex": 3
+			"canvasIndex": 0
 		},
 		{
 			"manifestId": "https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json",
-			"canvasIndex": 1
+			"canvasIndex": 24
 		}
 	]
 }
