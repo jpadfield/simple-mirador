@@ -1,8 +1,8 @@
- 
+t 
 {
 	"manifests": {
 		"https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json": {
-			"provider": "Hunterian Art Gallery"
+			"provider": "The National Gallery"
 		}
 	},
 	"windows": [{
