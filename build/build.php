@@ -142,9 +142,9 @@ function countFootNotes($matches) {
 
 function addLinks($matches) {
 	if (count($matches) > 1)
-		{$out = "<a href='$matches[2]'>$matches[1]</a>";}
+		{$out = "<a href='".str_replace(' ', '%20', $matches[2])."'>$matches[1]</a>";}
 	else
-		{$out = "<a href='$matches[0]'>$matches[0]</a>";}
+		{$out = "<a href='".str_replace(' ', '%20', $matches[0])."'>$matches[0]</a>";}
   return($out);
 }
 
@@ -215,13 +215,13 @@ function loopMenus ($str, $key, $arr, $no)
 	$str .= '<li class="dropdown-submenu">
    <a id="dropdownMenu'.$no.'" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle" title="Click to open the '.ucfirst($key).' menu">'.ucfirst($key).'</a>
 		<ul aria-labelledby="dropdownMenu'.$no.'" class="dropdown-menu border-0 shadow">'.
-		'<li><a href="'.$key.'.html" class="dropdown-item  top-item" title="Click to open the '.ucfirst($key).' page">'.ucfirst($key).'</a></li>'.
+		'<li><a href="'.str_replace(' ', '%20', $key).'.html" class="dropdown-item  top-item" title="Click to open the '.ucfirst($key).' page">'.ucfirst($key).'</a></li>'.
 		'<li class="dropdown-divider"></li>';
 
 	foreach ($arr as $k => $a)
 		{
 		if (!$a)
-			{$str .= '<li><a href="'.$k.'.html" class="dropdown-item">'.
+			{$str .= '<li><a href="'.str_replace(' ', '%20', $k).'.html" class="dropdown-item">'.
 				ucfirst($k).'</a></li>';}
 		else
 			{$str = loopMenus ($str, $k, $a, false, $no+1);}
@@ -245,9 +245,8 @@ function buildTopNav ($name, $bcs=false)
 	foreach ($pnames as $pname)
 		{if ($pname == "home") {$puse= "index";}
 		 else {$puse = $pname;}
-			prg(0, $puse);
 		 $puse = str_replace(' ', '%20', $puse);
-			prg(0, $puse); 
+
 		 if ($pname == $name) {$a = $active;}
 		 else {$a = array("", "");}
 		 
@@ -262,7 +261,7 @@ function buildTopNav ($name, $bcs=false)
 			foreach ($menuList[$pname] as $k => $a)
 				{
 				if (!$a)
-					{$html .= '<li><a href="'.$k.'.html" class="dropdown-item">'.ucfirst($k).'</a></li>';}
+					{$html .= '<li><a href="'.str_replace(' ', '%20', $k).'.html" class="dropdown-item">'.ucfirst($k).'</a></li>';}
 				else
 					{$html = loopMenus ($html, $k, $a, $no+1);}
 				}
@@ -332,6 +331,7 @@ function buildBreadcrumbs ($arr)
 		foreach ($arr as $k => $v)
 			{
 			$V = ucfirst($v);
+			$v = str_replace(' ', '%20', $v);
 			$list .= "<li class=\"breadcrumb-item\"><a href=\"${v}.html\">$V</a></li>";
 			}
 	ob_start();			
