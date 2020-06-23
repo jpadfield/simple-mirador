@@ -245,7 +245,9 @@ function buildTopNav ($name, $bcs=false)
 	foreach ($pnames as $pname)
 		{if ($pname == "home") {$puse= "index";}
 		 else {$puse = $pname;}
-			 
+			prg(0, $puse);
+		 $puse = str_replace(' ', '%20', $puse);
+			prg(0, $puse); 
 		 if ($pname == $name) {$a = $active;}
 		 else {$a = array("", "");}
 		 
