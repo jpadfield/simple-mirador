@@ -12,6 +12,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://unpkg.com/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="https://jpadfield.github.io/curtain-viewer/bundle.css" rel="stylesheet" type="text/css">
     <style>
     
     </style>
@@ -40,7 +41,60 @@
 			<div class="row ">				
 			 <div class="col-12 col-md-12">          
 				
-				<div class="jumbotron"><h2><b>Simple Mirador</b> - Further Examples</h2></div><div class="row"><div class="col-12 col-lg-12"></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12"><p>Additional Examples will be linked below this page.</p><div class="foonote"><ul></ul></div></div><!--/span--></div><!--/row-->    <br/>
+				<div class="jumbotron"><h2><b>Curtain Viewer</b> - <i>A Dominican, with the Attributes of Saint Peter Martyr</i></h2></div><div class="row"><div class="col-12 col-lg-12">		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="Further%20Examples.html">Further Examples</a></li>
+			</ol>
+		</nav></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12">The images presented here are all representations of <a href="https://www.nationalgallery.org.uk/paintings/giovanni-bellini-a-dominican-with-the-attributes-of-saint-peter-martyr">A Dominican, with the Attributes of Saint Peter Martyr about 1490-1500</a> by <a href="http://www.nationalgallery.org.uk/artists/giovanni-bellini">Giovanni Bellini</a> which was presented as part of the <a href="https://www.nationalgallery.org.uk/exhibitions/past/close-examination-fakes-mistakes-and-discoveries">Close Examination: Fakes, Mistakes and Discoveries</a> exhibition and is described in more detail <a href="http://www.nationalgallery.org.uk/paintings/research/a-dominican-with-the-attributes-of-saint-peter-martyr">here</a>.
+<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div class="curtain-viewer" data-iiif-manifest="https://jpadfield.github.io/curtain-viewer/public/manifest_testcollection.json"></div></div></div><div class="foonote"><ul></ul></div></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12">	<br/<br/>
+	<h3>The Curtain JSON File</h3>
+	<figure>
+		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
+    &quot;@context&quot;: &quot;http://iiif.io/api/presentation/2/context.json&quot;,
+    &quot;@id&quot;: &quot;https://leidenstage.wpengine.com/iiif/presentation/v2/collection/manifest/&quot;,
+    &quot;@type&quot;: &quot;sc:Collection&quot;,
+    &quot;label&quot;: &quot;The National Gallery Registered Image Examples&quot;,
+    &quot;attribution&quot;: &quot;The National Gallery&quot;,
+    &quot;description&quot;: &quot;A test of the V&amp;A developed curtain viewer.&quot;,
+    &quot;logo&quot;: &quot;https://research.ng-london.org.uk/ng/graphics/ng_logo_tr_125.png%22&quot;,
+    &quot;viewingDirection&quot;: &quot;left-to-right&quot;,
+    &quot;related&quot;: [
+        {
+            &quot;@id&quot;: &quot;https://www.nationalgallery.org.uk/&quot;
+        }
+    ],
+    &quot;manifests&quot;: [
+        {
+            &quot;@id&quot;: &quot;https://research.ng-london.org.uk/iiif-exp/manifests/bellini-petermartyr&quot;,
+            &quot;@type&quot;: &quot;sc:Manifest&quot;,
+            &quot;label&quot;: &quot;Test Caser&quot;,
+            &quot;service&quot;: [
+                {
+                    &quot;@context&quot;: &quot;http://www.nationalgallery.org.uk/paintings/research/a-dominican-with-the-attributes-of-saint-peter-martyr&quot;,
+                    &quot;@id&quot;: &quot;http://a-dominican-with-the-attributes-of-saint-peter-martyr&quot;,
+                    &quot;label&quot;: &quot;National Gallery  Example&quot;,
+                    &quot;terms&quot;: &quot;&quot;
+                }
+            ]
+        }
+    ]
+}</code></pre>
+		<figcaption class=\"figure-caption\">The complete curtain JSON file used to define the manifests and images presented in this example.</figcaption>
+	</figure>	<br/<br/>
+	<h3>Page JSON Object</h3>
+	<figure>
+		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
+    &quot;parent&quot;: &quot;Further Examples&quot;,
+    &quot;class&quot;: &quot;curtain&quot;,
+    &quot;file&quot;: &quot;curtain-example-01.json&quot;,
+    &quot;title&quot;: &quot;&lt;b&gt;Curtain Viewer&lt;/b&gt; - &lt;i&gt;A Dominican, with the Attributes of Saint Peter Martyr&lt;/i&gt;&quot;,
+    &quot;content&quot;: &quot;The images presented here are all representations of &lt;a href=\&quot;https://www.nationalgallery.org.uk/paintings/giovanni-bellini-a-dominican-with-the-attributes-of-saint-peter-martyr\&quot;&gt;A Dominican, with the Attributes of Saint Peter Martyr about 1490-1500&lt;/a&gt; by &lt;a href=\&quot;http://www.nationalgallery.org.uk/artists/giovanni-bellini\&quot;&gt;Giovanni Bellini&lt;/a&gt; which was presented as part of the &lt;a href=\&quot;https://www.nationalgallery.org.uk/exhibitions/past/close-examination-fakes-mistakes-and-discoveries\&quot;&gt;Close Examination: Fakes, Mistakes and Discoveries&lt;/a&gt; exhibition and is described in more detail &lt;a href=\&quot;http://www.nationalgallery.org.uk/paintings/research/a-dominican-with-the-attributes-of-saint-peter-martyr\&quot;&gt;here&lt;/a&gt;.\r\n[##]&quot;,
+    &quot;content right&quot;: &quot;&quot;,
+    &quot;displaycode&quot;: false,
+    &quot;name&quot;: &quot;Curtain&quot;
+}</code></pre>
+		<figcaption class=\"figure-caption\">The complete JSON object used to define this content and layout of this page.</figcaption>
+	</figure></div><!--/span--></div><!--/row-->    <br/>
 			</div><!--/span-->
 			
 			
@@ -61,6 +115,8 @@
 	<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
 	<script src="https://unpkg.com/tether@1.4.7/dist/js/tether.min.js"></script>
 	<script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://jpadfield.github.io/curtain-viewer/js/1.08958bb6.chunk.js"></script>
+	<script src="https://jpadfield.github.io/curtain-viewer/js/app.a955ee34.js"></script>
     <script>
 			
 			function onLoad() {
