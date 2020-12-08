@@ -1,6 +1,6 @@
 <?php
 
-// 
+// A V&A viewer (https://github.com/vanda/curtain-viewer) based on OpenSeaDragon, using the curtain-sync plugin (https://github.com/cuberis/openseadragon-curtain-sync) for comparing naturally aligned image variants, such as those obtained by multi-spectral imaging, supplied as canvases in a IIIF manifest. 
 
 $extensionList["curtain"] = "extensionCurtain";
 
@@ -13,46 +13,8 @@ function extensioncurtain ($d, $pd)
 	$codeHTML = "";
 	$codecaption = "The complete curtain JSON file used to define the manifests and images presented in this example.";
 		
-	if (isset($d["file"]) and file_exists($d["file"]))
-		{
-		$dets = getRemoteJsonDetails($d["file"], false, true);
-			
-		if (!$dets)
-			{
-			$dets = getRemoteJsonDetails($d["file"], false, false);
-			$dets = explode(PHP_EOL, trim($dets));
-
-			// Used to display the JSON used to create a given page for demos
-			if (isset($d["displaycode"]))
-				{$extraHTML .= displayCode ($dets, "The Curtain TXT File", "txt", $codecaption);}
-
-			if (preg_match('/^http.+/', $dets[0]))
-				{$mans = listToManifest ($dets); ///NEED TO UPDATE THIS ONE
-				 $wo = '[{
-					"manifestId": "'.$dets[0].'"
-					}]';}
-      }
-    else {
-			// Used to display the JSON used to create a given page for demos
-			if (isset($d["displaycode"]))
-				{$extraHTML .= displayCode ($dets, "The Curtain JSON File", "json", $codecaption);}
-				
-			$mans = json_encode($dets);			 
-			/* 
-			if (isset($dets["workspace"]))
-			 {$workspace = "workspace: ".json_encode($dets["workspace"]);}			 
-
-			if (isset($dets["windows"]))
-			 {$wo = json_encode($dets["windows"]);}
-			else
-			 {$manifestIds = array_keys($dets["manifests"]);
-				$manifestId = $manifestIds[0];				
-
-			  $wo = '[{
-					"manifestId": "'.$manifestId.'"
-					}]';}*/
-      }
-    }
+	if (isset($d["file"]) and file_exists($d["file"]) and isset($d["displaycode"]))
+		{$extraHTML .= displayCode ($dets, "The Curtain JSON File", "json", $codecaption);}
 
 	$pd["extra_css_scripts"][] = "https://jpadfield.github.io/curtain-viewer/bundle.css";
 	$pd["extra_js_scripts"][] = "https://jpadfield.github.io/curtain-viewer/js/1.08958bb6.chunk.js";
@@ -63,15 +25,4 @@ function extensioncurtain ($d, $pd)
   return (array("d" => $d, "pd" => $pd));
   }
 
-	 
-/*function listToManifest ($list)
-	{
-	$manifests = "{";
-
-	foreach ($list as $k => $url)
-		{$manifests .= "
-".json_encode($url).":{\"provider\":\"Undefined\"},";}
-	
-	return($manifests."}");
-	}    */
 ?>
