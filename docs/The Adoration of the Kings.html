@@ -40,7 +40,7 @@
 			<div class="row ">				
 			 <div class="col-12 col-md-12">          
 				
-				<div class="jumbotron"><h2><b>Technical Study</b> - <i>The Entombment</i></h2></div><div class="row"><div class="col-12 col-lg-12">		<nav aria-label="breadcrumb">
+				<div class="jumbotron"><h2><b>Illustrated Catalogues</b> - <i>The Adoration of the Kings</i></h2></div><div class="row"><div class="col-12 col-lg-12">		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="Further%20Examples.html">Further Examples</a></li>
 			</ol>
@@ -48,7 +48,7 @@
 
 <p><b>For more information about the simple-site project and details about how this example work please see the <a href='https://jpadfield.github.io/simple-site/'>simple-site webpages</a>.</b></p>
 
-<div class="alert alert-success" role="alert"><h4 class="alert-heading">Summary</h4><p>This example presents a series of images take of <a href='https://artuk.org/discover/artworks/the-entombment-138881'><i>The Entombment</i></a> by <a href='https://artuk.org/discover/artists/rembrandt-van-rijn-16061669'>Rembrandt van Rijn (1606–1669)</a>, <a href='https://artuk.org/visit/venues/hunterian-art-gallery-university-of-glasgow-5924'>Hunterian Art Gallery, University of Glasgow</a>. These images where taken at the <a href='https://www.nationalgallery.org.uk/'>The National Gallery</a> as part of a detailed technical examination. As the painting is relatively small is was possible to take some very high resolution images, with the overall visible image captured at about 1500 ppi and the two visible detail images captured at about 4000 ppi.</p></div>
+<div class="alert alert-success" role="alert"><h4 class="alert-heading">Summary</h4><p>To coincide with the <a href='https://www.nationalgallery.org.uk/whats-on/exhibitions/jan-gossaerts-renaissance'>Jan Gossaert's Renaissance</a> exhibition (2011), the full catalogue entry of Gossaert's <a href='https://www.nationalgallery.org.uk/paintings/jan-gossaert-jean-gossart-the-adoration-of-the-kings'><i>The Adoration of the Kings</i></a>, taken from 'The Sixteenth Century Netherlandish Paintings with French Paintings before 1600' by Lorne Campbell, was published on the Gallery website in advance of book publication. Find out more about the <a href='https://www.nationalgallery.org.uk/paintings/research/the-national-gallery-catalogues'>catalogues</a>.<br/><br/>Lorne Campbell was George Beaumont Senior Research Curator at the National Gallery. He is the author of numerous publications including ‘The Fifteenth Century Netherlandish Paintings’ in the new series of National Gallery Catalogues.</p></div>
 
 <h3>The Viewer</h3>
 <div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;" id="mirador"></div></div></div><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12">	<br/<br/>
@@ -56,18 +56,14 @@
 	<figure>
 		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
     &quot;manifests&quot;: {
-        &quot;https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json&quot;: {
-            &quot;provider&quot;: &quot;Hunterian Art Gallery&quot;
+        &quot;https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json&quot;: {
+            &quot;provider&quot;: &quot;The National Gallery&quot;
         }
     },
     &quot;windows&quot;: [
         {
-            &quot;manifestId&quot;: &quot;https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json&quot;,
-            &quot;canvasIndex&quot;: 3
-        },
-        {
-            &quot;manifestId&quot;: &quot;https://research.ng-london.org.uk/iiif/projects/external/m1391/manifest.json&quot;,
-            &quot;canvasIndex&quot;: 1
+            &quot;manifestId&quot;: &quot;https://research.ng-london.org.uk/iiif/projects/external/ng2790/manifest.json&quot;,
+            &quot;view&quot;: &quot;gallery&quot;
         }
     ]
 }</code></pre>
@@ -78,12 +74,12 @@
 		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
     &quot;parent&quot;: &quot;Further Examples&quot;,
     &quot;class&quot;: &quot;mirador&quot;,
-    &quot;file&quot;: &quot;mirador-example01.json&quot;,
-    &quot;title&quot;: &quot;&lt;b&gt;Technical Study&lt;/b&gt; - &lt;i&gt;The Entombment&lt;/i&gt;&quot;,
-    &quot;content&quot;: &quot;&lt;p&gt;This extension uses the [IIIF|https://iiif.io] image viewer [Mirador|https://projectmirador.org/] to produce a customised presentation of a bespoke selection of IIIF manifests[@@IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see https://iiif.io/api/presentation/2.1/#table-of-contents]. It is an example of a special page that can be added and presented using the [simple-site|https://github.com/jpadfield/simple-site] project.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;For more information about the simple-site project and details about how this example work please see the [simple-site webpages|https://jpadfield.github.io/simple-site/].&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;div class=\&quot;alert alert-success\&quot; role=\&quot;alert\&quot;&gt;&lt;h4 class=\&quot;alert-heading\&quot;&gt;Summary&lt;/h4&gt;&lt;p&gt;This example presents a series of images take of [&lt;i&gt;The Entombment&lt;/i&gt;|https://artuk.org/discover/artworks/the-entombment-138881] by [Rembrandt van Rijn (1606\u20131669)|https://artuk.org/discover/artists/rembrandt-van-rijn-16061669], [Hunterian Art Gallery, University of Glasgow|https://artuk.org/visit/venues/hunterian-art-gallery-university-of-glasgow-5924]. These images where taken at the [The National Gallery|https://www.nationalgallery.org.uk/] as part of a detailed technical examination. As the painting is relatively small is was possible to take some very high resolution images, with the overall visible image captured at about 1500 ppi and the two visible detail images captured at about 4000 ppi.&lt;/p&gt;&lt;/div&gt;\r\n\r\n&lt;h3&gt;The Viewer&lt;/h3&gt;\r\n[##]&quot;,
+    &quot;file&quot;: &quot;mirador-example02.json&quot;,
+    &quot;title&quot;: &quot;&lt;b&gt;Illustrated Catalogues&lt;/b&gt; - &lt;i&gt;The Adoration of the Kings&lt;/i&gt;&quot;,
+    &quot;content&quot;: &quot;&lt;p&gt;This extension uses the [IIIF|https://iiif.io] image viewer [Mirador|https://projectmirador.org/] to produce a customised presentation of a bespoke selection of IIIF manifests[@@IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see https://iiif.io/api/presentation/2.1/#table-of-contents]. It is an example of a special page that can be added and presented using the [simple-site|https://github.com/jpadfield/simple-site] project.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;For more information about the simple-site project and details about how this example work please see the [simple-site webpages|https://jpadfield.github.io/simple-site/].&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;div class=\&quot;alert alert-success\&quot; role=\&quot;alert\&quot;&gt;&lt;h4 class=\&quot;alert-heading\&quot;&gt;Summary&lt;/h4&gt;&lt;p&gt;To coincide with the [Jan Gossaert's Renaissance|https://www.nationalgallery.org.uk/whats-on/exhibitions/jan-gossaerts-renaissance] exhibition (2011), the full catalogue entry of Gossaert's [&lt;i&gt;The Adoration of the Kings&lt;/i&gt;|https://www.nationalgallery.org.uk/paintings/jan-gossaert-jean-gossart-the-adoration-of-the-kings], taken from 'The Sixteenth Century Netherlandish Paintings with French Paintings before 1600' by Lorne Campbell, was published on the Gallery website in advance of book publication. Find out more about the [catalogues|https://www.nationalgallery.org.uk/paintings/research/the-national-gallery-catalogues].&lt;br/&gt;&lt;br/&gt;Lorne Campbell was George Beaumont Senior Research Curator at the National Gallery. He is the author of numerous publications including \u2018The Fifteenth Century Netherlandish Paintings\u2019 in the new series of National Gallery Catalogues.&lt;/p&gt;&lt;/div&gt;\r\n\r\n&lt;h3&gt;The Viewer&lt;/h3&gt;\r\n[##]&quot;,
     &quot;content right&quot;: &quot;&quot;,
     &quot;displaycode&quot;: true,
-    &quot;name&quot;: &quot;The Entombment&quot;
+    &quot;name&quot;: &quot;The Adoration of the Kings&quot;
 }</code></pre>
 		<figcaption class=\"figure-caption\">The complete JSON object used to define this content and layout of this page.</figcaption>
 	</figure></div><!--/span--></div><!--/row-->    <br/>
@@ -113,8 +109,8 @@
 
 var myMiradorInstance = Mirador.viewer({
        id: "mirador",
-       windows: [{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/m1391\/manifest.json","canvasIndex":3},{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/m1391\/manifest.json","canvasIndex":1}],
-       manifests: {"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/m1391\/manifest.json":{"provider":"Hunterian Art Gallery"}},
+       windows: [{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/ng2790\/manifest.json","view":"gallery"}],
+       manifests: {"https:\/\/research.ng-london.org.uk\/iiif\/projects\/external\/ng2790\/manifest.json":{"provider":"The National Gallery"}},
        
        });     
      });
