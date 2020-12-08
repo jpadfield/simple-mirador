@@ -1,0 +1,30 @@
+{
+    "@context": "http://iiif.io/api/presentation/2/context.json",
+    "@id": "https://leidenstage.wpengine.com/iiif/presentation/v2/collection/manifest/",
+    "@type": "sc:Collection",
+    "label": "The National Gallery Registered Image Examples",
+    "attribution": "The National Gallery",
+    "description": "A test of the V&A developed curtain viewer.",
+    "logo": "https://research.ng-london.org.uk/ng/graphics/ng_logo_tr_125.png%22",
+    "viewingDirection": "left-to-right",
+    "related": [
+        {
+            "@id": "https://www.nationalgallery.org.uk/"
+        }
+    ],
+    "manifests": [
+        {
+            "@id": "https://research.ng-london.org.uk/iiif-exp/manifests/bellini-petermartyr",
+            "@type": "sc:Manifest",
+            "label": "Test Caser",
+            "service": [
+                {
+                    "@context": "http://www.nationalgallery.org.uk/paintings/research/a-dominican-with-the-attributes-of-saint-peter-martyr",
+                    "@id": "http://a-dominican-with-the-attributes-of-saint-peter-martyr",
+                    "label": "National Gallery  Example",
+                    "terms": ""
+                }
+            ]
+        }
+    ]
+}
