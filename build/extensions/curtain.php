@@ -65,7 +65,7 @@ function extensioncurtain ($d, $pd)
   }
 
 	 
-function listToManifest ($list)
+/*function listToManifest ($list)
 	{
 	$manifests = "{";
 
@@ -74,5 +74,5 @@ function listToManifest ($list)
 ".json_encode($url).":{\"provider\":\"Undefined\"},";}
 	
 	return($manifests."}");
-	}    
+	}    */
 ?>
