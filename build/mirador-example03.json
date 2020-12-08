@@ -1,0 +1,12 @@
+{
+	"manifests": {
+		"https://research.ng-london.org.uk/iiif-exp/manifests/bellini-petermartyr": {
+			"provider": "The National Gallery"
+		}
+	},
+	"windows": [{
+			"manifestId": "https://research.ng-london.org.uk/iiif-exp/manifests/bellini-petermartyr",
+			 "view": "gallery"
+		}
+	]
+}
