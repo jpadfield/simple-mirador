@@ -58,7 +58,7 @@ function extensioncurtain ($d, $pd)
 	$pd["extra_js_scripts"][] = "https://jpadfield.github.io/curtain-viewer/js/1.08958bb6.chunk.js";
 	$pd["extra_js_scripts"][] = "https://jpadfield.github.io/curtain-viewer/js/app.a955ee34.js";
 
-	$d["content"] = positionExtraContent ($d["content"], '<br/><div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div class="curtain-viewer" data-iiif-manifest="'.$d["file"].'"></div></div></div>'.$codeHTML);
+	$d["content"] = positionExtraContent ($d["content"], '<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div class="curtain-viewer" data-iiif-manifest="'.$d["file"].'"></div></div></div>'.$codeHTML);
 
   return (array("d" => $d, "pd" => $pd));
   }
