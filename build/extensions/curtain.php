@@ -13,8 +13,9 @@ function extensioncurtain ($d, $pd)
 	$codeHTML = "";
 	$codecaption = "The complete curtain JSON file used to define the manifests and images presented in this example.";
 		
-	if (isset($d["file"]) and file_exists($d["file"]) and isset($d["displaycode"]))
-		{$extraHTML .= displayCode ($dets, "The Curtain JSON File", "json", $codecaption);}
+	if (isset($d["file"]) and isset($d["displaycode"]))
+		{$dets = getRemoteJsonDetails($d["file"], false, true);
+		 $extraHTML .= displayCode ($dets, "The Curtain JSON File", "json", $codecaption);}
 
 	$pd["extra_css_scripts"][] = "https://jpadfield.github.io/curtain-viewer/bundle.css";
 	$pd["extra_js_scripts"][] = "https://jpadfield.github.io/curtain-viewer/js/1.08958bb6.chunk.js";

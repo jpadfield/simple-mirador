@@ -46,6 +46,40 @@
 				<li class="breadcrumb-item"><a href="Further%20Examples.html">Further Examples</a></li>
 			</ol>
 		</nav></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12"><p>An example of the <a href="https://www.vam.ac.uk/" rel="nofollow">Victoria and Albert Museum</a> <a href="https://vanda.github.io/curtain-viewer/" rel="nofollow">Curtain Viewer</a> based on OpenSeaDragon, using the <a href="https://github.com/cuberis/openseadragon-curtain-sync">curtain-sync plugin</a> for comparing naturally aligned image variants, such as those obtained by multi-spectral imaging, supplied as canvases in a IIIF manifest.</p><p>The images presented here are all representations of <a href="https://www.nationalgallery.org.uk/paintings/giovanni-bellini-a-dominican-with-the-attributes-of-saint-peter-martyr">A Dominican, with the Attributes of Saint Peter Martyr about 1490-1500</a> by <a href="http://www.nationalgallery.org.uk/artists/giovanni-bellini">Giovanni Bellini</a> which was presented as part of the <a href="https://www.nationalgallery.org.uk/exhibitions/past/close-examination-fakes-mistakes-and-discoveries">Close Examination: Fakes, Mistakes and Discoveries</a> exhibition and is described in more detail <a href="http://www.nationalgallery.org.uk/paintings/research/a-dominican-with-the-attributes-of-saint-peter-martyr">here</a>.</p><div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div class="curtain-viewer" data-iiif-manifest="https://raw.githubusercontent.com/jpadfield/simple-mirador/master/build/curtain-example-01.json"></div></div></div><div class="foonote"><ul></ul></div></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12">	<br/<br/>
+	<h3>The Curtain JSON File</h3>
+	<figure>
+		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
+    &quot;@context&quot;: &quot;http://iiif.io/api/presentation/2/context.json&quot;,
+    &quot;@id&quot;: &quot;https://raw.githubusercontent.com/jpadfield/simple-mirador/master/build/curtain-example-01.json&quot;,
+    &quot;@type&quot;: &quot;sc:Collection&quot;,
+    &quot;label&quot;: &quot;The National Gallery Registered Image Examples&quot;,
+    &quot;attribution&quot;: &quot;The National Gallery&quot;,
+    &quot;description&quot;: &quot;The images presented here are all representations of &lt;a href=\&quot;https://www.nationalgallery.org.uk/paintings/giovanni-bellini-a-dominican-with-the-attributes-of-saint-peter-martyr\&quot;&gt;A Dominican, with the Attributes of Saint Peter Martyr about 1490-1500&lt;/a&gt; by &lt;a href=\&quot;http://www.nationalgallery.org.uk/artists/giovanni-bellini\&quot;&gt;Giovanni Bellini&lt;/a&gt; which was presented as part of the &lt;a href=\&quot;https://www.nationalgallery.org.uk/exhibitions/past/close-examination-fakes-mistakes-and-discoveries\&quot;&gt;Close Examination: Fakes, Mistakes and Discoveries&lt;/a&gt; exhibition and is described in more detail &lt;a href=\&quot;http://www.nationalgallery.org.uk/paintings/research/a-dominican-with-the-attributes-of-saint-peter-martyr\&quot;&gt;here&lt;/a&gt;.&quot;,
+    &quot;logo&quot;: &quot;https://research.ng-london.org.uk/ng/graphics/ng_logo_tr_125.png&quot;,
+    &quot;viewingDirection&quot;: &quot;left-to-right&quot;,
+    &quot;related&quot;: [
+        {
+            &quot;@id&quot;: &quot;https://www.nationalgallery.org.uk/&quot;
+        }
+    ],
+    &quot;manifests&quot;: [
+        {
+            &quot;@id&quot;: &quot;https://research.ng-london.org.uk/iiif-exp/manifests/bellini-petermartyr&quot;,
+            &quot;@type&quot;: &quot;sc:Manifest&quot;,
+            &quot;label&quot;: &quot;A Dominican, with the Attributes of Saint Peter Martyr&quot;,
+            &quot;service&quot;: [
+                {
+                    &quot;@context&quot;: &quot;http://www.nationalgallery.org.uk/paintings/research/a-dominican-with-the-attributes-of-saint-peter-martyr&quot;,
+                    &quot;@id&quot;: &quot;http://a-dominican-with-the-attributes-of-saint-peter-martyr&quot;,
+                    &quot;label&quot;: &quot;National Gallery  Example&quot;,
+                    &quot;terms&quot;: &quot;&quot;
+                }
+            ]
+        }
+    ]
+}</code></pre>
+		<figcaption class=\"figure-caption\">The complete curtain JSON file used to define the manifests and images presented in this example.</figcaption>
+	</figure>	<br/<br/>
 	<h3>Page JSON Object</h3>
 	<figure>
 		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
