@@ -76,8 +76,8 @@
 		"content right": "",
 		"displaycode": false
 	},
-	"Curtain": {
-		"parent": "Further Examples",
+	"Curtain Viewer Demo": {
+		"parent": "",
 		"class": "curtain",
 		"file": "https://raw.githubusercontent.com/jpadfield/simple-mirador/master/build/curtain-example-01.json",
 		"title": "<b>Curtain Viewer</b> - <i>A Dominican, with the Attributes of Saint Peter Martyr</i>",
