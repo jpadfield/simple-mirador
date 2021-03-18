@@ -13,7 +13,7 @@
 	<link href="https://unpkg.com/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
     <style>
-    .fixed-top {z-index:1111;}
+    
     </style>
   </head>
 
@@ -40,37 +40,7 @@
 			<div class="row ">				
 			 <div class="col-12 col-md-12">          
 				
-				<div class="jumbotron"><h2><b>Simple Mirador</b> - The Text Example</h2></div><div class="row"><div class="col-12 col-lg-12">		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="Examples.html">Examples</a></li>
-			</ol>
-		</nav></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12"><p>This extension uses the <a href='https://iiif.io'>IIIF</a> image viewer <a href='https://projectmirador.org/'>Mirador</a> to produce a customised presentation of a bespoke selection of IIIF manifests<sup><a id="ref1" href="#section1">[1]</a></sup>. It is an example of a special page that can be added and presented using the <a href='https://github.com/jpadfield/simple-site'>simple-site</a> project.</p>
-
-<p><b>For more information about the simple-site project and details about how this example work please see the <a href='https://jpadfield.github.io/simple-site/'>simple-site webpages</a>.</b></p>
-
-<div class="alert alert-info" role="alert"><h4 class="alert-heading">Summary</h4><p>This very simple example page has been created using only a simple text list of IIIF manifests, for more information see <a href='https://jpadfield.github.io/simple-site/IIIF%20viewer.html'>here</a>.</p></div>
-
-<h3>The Viewer</h3>
-<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;" id="mirador"></div></div></div><div class="foonote"><ul><hr/><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12">	<br/<br/>
-	<h3>The Mirador TXT File</h3>
-	<figure>
-		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>https://manifests.britishart.yale.edu/manifest/34<br>https://iiif.harvardartmuseums.org/manifests/object/299843<br>https://media.nga.gov/public/manifests/nga_highlights.json<br></code></pre>
-		<figcaption class=\"figure-caption\">The complete mirador JSON file used to define the manifests and images presented in this example.</figcaption>
-	</figure>	<br/<br/>
-	<h3>Page JSON Object</h3>
-	<figure>
-		<pre style="overflow-y: auto;overflow-x: hidden; border: 2px solid black;padding: 10px;max-height:400px;"><code>{
-    &quot;parent&quot;: &quot;Examples&quot;,
-    &quot;class&quot;: &quot;mirador&quot;,
-    &quot;file&quot;: &quot;mirador-simple.txt&quot;,
-    &quot;title&quot;: &quot;&lt;b&gt;Simple Mirador&lt;/b&gt; - The Text Example&quot;,
-    &quot;content&quot;: &quot;&lt;p&gt;This extension uses the [IIIF|https://iiif.io] image viewer [Mirador|https://projectmirador.org/] to produce a customised presentation of a bespoke selection of IIIF manifests[@@IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see https://iiif.io/api/presentation/2.1/#table-of-contents]. It is an example of a special page that can be added and presented using the [simple-site|https://github.com/jpadfield/simple-site] project.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;For more information about the simple-site project and details about how this example work please see the [simple-site webpages|https://jpadfield.github.io/simple-site/].&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;div class=\&quot;alert alert-info\&quot; role=\&quot;alert\&quot;&gt;&lt;h4 class=\&quot;alert-heading\&quot;&gt;Summary&lt;/h4&gt;&lt;p&gt;This very simple example page has been created using only a simple text list of IIIF manifests, for more information see [here|https://jpadfield.github.io/simple-site/IIIF%20viewer.html].&lt;/p&gt;&lt;/div&gt;\r\n\r\n&lt;h3&gt;The Viewer&lt;/h3&gt;\r\n[##]&quot;,
-    &quot;content right&quot;: &quot;&quot;,
-    &quot;displaycode&quot;: true,
-    &quot;name&quot;: &quot;Simple Text Example&quot;
-}</code></pre>
-		<figcaption class=\"figure-caption\">The complete JSON object used to define this content and layout of this page.</figcaption>
-	</figure></div><!--/span--></div><!--/row-->    <br/>
+				<div class="jumbotron"><h2><b>Simple Mirador</b> - Examples</h2></div><div class="row"><div class="col-12 col-lg-12"></div><!--/span--></div><!--/row-->    <div class="row"><div class="col-12 col-lg-12"><p>Examples will be linked below this page.</p><div class="foonote"><ul></ul></div></div><!--/span--></div><!--/row-->    <br/>
 			</div><!--/span-->
 			
 			
@@ -91,22 +61,8 @@
 	<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
 	<script src="https://unpkg.com/tether@1.4.7/dist/js/tether.min.js"></script>
 	<script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="https://unpkg.com/mirador@3.0.0/dist/mirador.min.js"></script>
     <script>
-				$(function() {
-
-var myMiradorInstance = Mirador.viewer({
-       id: "mirador",
-       windows: [{
-					"manifestId": "https://manifests.britishart.yale.edu/manifest/34"
-					}],
-       manifests: {
-"https:\/\/manifests.britishart.yale.edu\/manifest\/34":{"provider":"Undefined"},
-"https:\/\/iiif.harvardartmuseums.org\/manifests\/object\/299843":{"provider":"Undefined"},
-"https:\/\/media.nga.gov\/public\/manifests\/nga_highlights.json":{"provider":"Undefined"},},
-       
-       });     
-     });
+			
 			function onLoad() {
 				$(function() {
   // ------------------------------------------------------- //
