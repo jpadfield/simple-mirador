@@ -12,7 +12,13 @@
 		"content right": "",
 		"displaycode": true		
 	},
+	"Examples": {
+		"title": "<b>Simple Mirador</b> - Examples",
+		"content": "<p>Examples will be linked below this page.</p>",
+		"content right": ""
+	},
 	"Standard Example": {
+		"parent": "Examples",
 		"class": "mirador",
 		"file": "mirador.json",
 		"title": "<b>Simple Mirador</b> - The Standard Example",
@@ -21,6 +27,7 @@
 		"displaycode": true
 	},
 	"Simple Example": {
+		"parent": "Examples",
 		"class": "mirador",
 		"file": "mirador-simple.json",
 		"title": "<b>Simple Mirador</b> - The Simple Example",
@@ -29,6 +36,7 @@
 		"displaycode": true
 	},
 	"Simple Text Example": {
+		"parent": "Examples",
 		"class": "mirador",
 		"file": "mirador-simple.txt",
 		"title": "<b>Simple Mirador</b> - The Text Example",
@@ -37,6 +45,7 @@
 		"displaycode": true
 	},
 	"Complex Example": {
+		"parent": "Examples",
 		"class": "mirador",
 		"file": "mirador-complex.json",
 		"title": "<b>Simple Mirador</b> - The Complex Example",
