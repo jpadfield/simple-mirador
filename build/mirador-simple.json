@@ -1,8 +1,6 @@
 	{
-	"manifests": {
-		"https://media.ng-london.org.uk/iiif/001-0145-0000/manifest.json": {
-			"provider": "The National Gallery, London"},
-		"https://media.nga.gov/public/manifests/nga_highlights.json": {
-			"provider": "National Gallery of Art"}		
-		}
+	"catalog": [
+		{"manifestId": "https://media.ng-london.org.uk/iiif/001-0145-0000/manifest.json"},
+		{"manifestId": "https://media.nga.gov/public/manifests/nga_highlights.json"}
+		]
 	}
