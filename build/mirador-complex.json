@@ -1,13 +1,12 @@
 	{
-	"manifests": {
-		"https://data.getty.edu/museum/api/iiif/865/manifest.json":
-    {"provider": "The J. Paul Getty Museum"}, "https://data.getty.edu/museum/api/iiif/248/manifest.json":
-    {"provider": "The J. Paul Getty Museum"},"https://media.nga.gov/public/manifests/nga_highlights.json":
-    {"provider": "National Gallery of Art"},"https://iiif.harvardartmuseums.org/manifests/object/299964":
-    {"provider": "Harvard Art Museums"},"https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest":
-    {"provider": "The Frick Collection"},"https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json":
-    {"provider": "The National Gallery"}		
-		},
+	"catalog": [
+		{"manifestID":"https://data.getty.edu/museum/api/iiif/865/manifest.json"},
+		{"manifestID":"https://data.getty.edu/museum/api/iiif/248/manifest.json"},
+		{"manifestID":"https://media.nga.gov/public/manifests/nga_highlights.json"},
+		{"manifestID":"https://iiif.harvardartmuseums.org/manifests/object/299964"},
+		{"manifestID":"https://collections.frick.org/apis/iiif/presentation/v2/objects-266/manifest"},
+		{"manifestID":"https://media.ng-london.org.uk/iiif/001-043H-0000/manifest.json"}
+		],
 	"windows": [
 		{ "id": "a",
 			"manifestId": "https://data.getty.edu/museum/api/iiif/865/manifest.json" },
