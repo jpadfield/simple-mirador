@@ -107,7 +107,7 @@
 <div class="alert alert-success" role="alert"><h4 class="alert-heading">Summary</h4><p>This example provides a comparison between <a href="https://www.nationalgallery.org.uk/paintings/john-constable-the-hay-wain">The Hay Wain</a> from the <a href="https://www.nationalgallery.org.uk/">National Gallery</a> with the <a href="https://collections.vam.ac.uk/item/O81405/full-scale-study-for-ithe-oil-painting-john-constable/">Full-Scale Study for The Hay Wain</a> from the <a href="http://www.vam.ac.uk/">Victoria and Albert Museum</a>. Further related information can be seen <a href="https://www.vam.ac.uk/articles/john-constables-sketches">here</a>.</p></div>
 
 <h3>The Viewer</h3>
-<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;position:relative" id="mirador"></div></div></div><div class="foonote"><hr/><ul><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div>
+<div class="row" style="padding-left:16px;padding-right:16px;"><div class="col-12 col-lg-12"><div style="height:500px;position:relative;min-width:324px;" id="mirador"></div></div></div><div class="foonote"><hr/><ul><li id="section1"><a href="#ref1">[1]</a> IIIF manifests are simply a structured list of web based images resources that can be viewed in a IIIF compliant viewer, for more details see <a href='https://iiif.io/api/presentation/2.1/#table-of-contents'>https://iiif.io/api/presentation/2.1/#table-of-contents</a></li></ul></div>
 						</div></div><!--/span--></div></div><!--/row-->    <div class="container-fluid "><div class="row h-100"><div class="col-12 col-lg-12">							
 								<div class="h-100 d-flex flex-column">
 								<hr/>
@@ -179,15 +179,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha256-d+FygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1+c5vKk=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery.json-viewer@1.4.0/json-viewer/jquery.json-viewer.js" integrity="sha256-klSHtWPkZv4zG4darvDEpAQ9hJFDqNbQrM+xDChm8Fo=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/mirador@3.1.1/dist/mirador.min.js" integrity="sha256-kgsl88ooIyFxWsB8GWBeWDt+qbAklTRuCD0rT7w14p0=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mirador@3.2.0/dist/mirador.min.js" integrity="sha256-e11UQD1U7ifc8OK9X0rVMshTXSKl7MafRxi3PTwXDHs=" crossorigin="anonymous"></script>
 	<script>
 			$(function() {
 
 var myMiradorInstance = Mirador.viewer({
        id: "mirador",
        windows: [{"manifestId":"https:\/\/data.ng-london.org.uk\/iiif\/0FV6-0001-0000-0000\/manifest","canvasIndex":1},{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif-exp\/manifests\/vanda-haywain","canvasIndex":0}],
-       "catalog": [{"manifestId":"https:\/\/data.ng-london.org.uk\/iiif\/0FV6-0001-0000-0000\/manifest"},{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif-exp\/manifests\/vanda-haywain"}]
-
+       manifests: [],
+       "catalog": [{"manifestId":"https:\/\/data.ng-london.org.uk\/iiif\/0FV6-0001-0000-0000\/manifest"},{"manifestId":"https:\/\/research.ng-london.org.uk\/iiif-exp\/manifests\/vanda-haywain"}],
        
        });     
      });
@@ -199,7 +199,9 @@ var myMiradorInstance = Mirador.viewer({
 			var jsonResult;
 			
 			try {jsonResult = JSON.parse(vtext);}
-			catch (e) {console.log("\""+vtext+"\" " + "is not valid JSON: "+e);};
+			catch (e) {
+				//console.log("\""+vtext+"\" " + "is not valid JSON: "+e);
+				};
 		
 			if (jsonResult) {$(value).jsonViewer(jsonResult);}
 			else
