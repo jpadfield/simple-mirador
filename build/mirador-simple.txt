@@ -1,3 +1,5 @@
-https://manifests.collections.yale.edu/ycba/obj/34
-https://iiif.harvardartmuseums.org/manifests/object/299843
-https://media.nga.gov/public/manifests/nga_highlights.json
+https://www.e-rara.ch/i3f/v20/17729184/manifest
+https://www.e-rara.ch/i3f/v20/17729188/manifest
+https://www.e-rara.ch/i3f/v20/15073017/manifest
+https://www.e-rara.ch/i3f/v20/17729193/manifest
+https://www.e-rara.ch/i3f/v20/17729197/manifest
